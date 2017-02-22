@@ -36,36 +36,36 @@ Es necesario tener instalado en tu sistema:
 
 <h3>Instalación</h3>
 Clonar el repositorio</br>
-~/git clone git@github.com:olivertar/webenvdev.git
+>~/git clone git@github.com:olivertar/webenvdev.git
 
 Ir a la carpeta "docker" dentro del directorio de instalación</br>
-~/cd webenvdev/docker
+>~/cd webenvdev/docker
 
 Editar el archivo ".env" (webenvdev/docker/.env) y modificar las variables si es necesario.</br>
 MYSQLROOTPASSWORD=garbanzo <- Es la clave del usuario Root de Mysql</br>
 BASEWWW=../../www <- Es la ruta, relativa al directorio webenvdev/docker donde estarán las carpetas con los archivos de nuestros proyectos.
 
 Inicializar Docker</br>
-~/docker-compose up
+>~/docker-compose up
 
 Esta operacion solo se hace una vez y puede demorar un rato mas o menos largo mientras descarga e instala las imagenes de MySQL y PHP
 
 Agregar a nuestro archivo hosts (/etc/hosts) las siguientes lineas</br>
-127.0.0.1 phpmyadmin.dev</br>
-127.0.0.1 myapp.dev</br>
-127.0.0.1 help.dev
+>127.0.0.1 phpmyadmin.dev</br>
+>127.0.0.1 myapp.dev</br>
+>127.0.0.1 help.dev
 
 <h3>Prueba</h3>
 Si no hubo problemas en la instación en http://help.dev deberiamos ver la informacion de PHP (phpinfo)
 
 <h3>Uso</h3>
 Para detener los contenedores el comando es:</br>
-~/docker-compose stop
+>~/docker-compose stop
 
 Para reinicialos podemos usar:</br>
-~/docker-compose start mysql php7 nginx</br>
+>~/docker-compose start mysql php7 nginx</br>
 o</br>
-~/docker-compose start
+>~/docker-compose start
 
 <h3>Virtual Host</h3>
 Por ahora los crearemos manualmente.</br>
@@ -90,10 +90,15 @@ NOTA: cuando tengamos que configurar una coneccion a una base de datos como "hos
 
 <h3>Acceso SSH</h3>
 Si necesitamos acceder al entorno por ssh por ejemplo para instalar Magento 2 con composer</br>
-~/docker exec -it php7 bash</br>
+>~/docker exec -it php7 bash</br>
 y para cerrar la terminal:</br>
 >exit
 
+<h3>Proximamente se incorporara</h3>
+- Apache
+- Varnish
+- Redis
+- Xdebug
 
 
 
