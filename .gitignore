@@ -1,1 +1,32 @@
-instrucciones.txt
+.buildpath
+.project
+.settings
+vssver2.scc
+.metadata
+*.*~
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.DS_Store
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PDT-specific
+.buildpath
+
+varios.txt
+mysql/data
+mysql/data/*
+config/nginx/*
+config/nginx/!help.conf
+config/nginx/!myapp.conf
+config/nginx/!phpmyadmin.conf
+logs/nginx/*
+logs/nginx/!README.md
