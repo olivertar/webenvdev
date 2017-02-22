@@ -1,6 +1,9 @@
 Eliminar todos los containers
 docker rm $(docker ps -aq)
 
+Listar imagenes
+docker images
+
 Eliminar todas las imagenes
 docker rmi $(docker images -q)
 

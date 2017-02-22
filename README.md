@@ -2,13 +2,13 @@
 Entorno de desarrollo web basado en Docker y Docker Compose</br>
 Esta versión es especifica para desarrollar proyectos con <strong>Magento 2</strong></br>
 
-IMPORTANTE: <strong>esta versión aún esta bajo desarrollo.</strong>
+IMPORTANTE: <strong>esta versión aún está bajo desarrollo.</strong>
 
 <h3>Pre requisitos</h3>
 Es necesario tener instalado en tu sistema:
 - Docker
 - Docker Compose
-- Los puertos 80 y 3306 deben estar libres, esto significa que si la maquina anfitrion tiene un servidor web y mysql debemos detenerlos para usar el entorno de desarrollo virtualizado.
+- Los puertos 80 y 3306 deben estar libres, esto significa que si la maquina anfitrión tiene un servidor web y mysql debemos detenerlos para usar el entorno de desarrollo virtualizado.
 
 <h3>Componentes</h3>
 - MySQL 5.7
@@ -34,16 +34,16 @@ Es necesario tener instalado en tu sistema:
 <li>iconv</li>
 </ul>
 
-<h3>Instalacion</h3>
+<h3>Instalación</h3>
 Clonar el repositorio</br>
 ~/git clone git@github.com:olivertar/webenvdev.git
 
-Ir a la carpeta "docker" dentro del directorio de instalacion</br>
+Ir a la carpeta "docker" dentro del directorio de instalación</br>
 ~/cd webenvdev/docker
 
-Editar el archivo ".env" y modificar las variables si es necesario.</br>
+Editar el archivo ".env" (webenvdev/docker/.env) y modificar las variables si es necesario.</br>
 MYSQLROOTPASSWORD=garbanzo <- Es la clave del usuario Root de Mysql</br>
-BASEWWW=../../www <- Es la ruta, relativa al directorio webenvdev/docker donde estaran las carpetas con los archivos de nuestros proyectos.
+BASEWWW=../../www <- Es la ruta, relativa al directorio webenvdev/docker donde estarán las carpetas con los archivos de nuestros proyectos.
 
 Inicializar Docker</br>
 ~/docker-compose up
@@ -56,7 +56,7 @@ Agregar a nuestro archivo hosts (/etc/hosts) las siguientes lineas</br>
 127.0.0.1 help.dev
 
 <h3>Prueba</h3>
-Si no hubo problemas en la instacion en http://help.dev deberiamos ver la informacion de PHP (phpinfo)
+Si no hubo problemas en la instación en http://help.dev deberiamos ver la informacion de PHP (phpinfo)
 
 <h3>Uso</h3>
 Para detener los contenedores el comando es:</br>
@@ -70,7 +70,7 @@ o</br>
 si necesitamos acceder al entorno por ssh:</br>
 ~/docker exec -it php7 bash</br>
 y para cerrar la terminal:</br>
-exit
+>exit
 
 
 
