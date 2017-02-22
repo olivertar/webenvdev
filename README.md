@@ -67,7 +67,29 @@ Para reinicialos podemos usar:</br>
 o</br>
 ~/docker-compose start
 
-si necesitamos acceder al entorno por ssh:</br>
+<h3>Virtual Host</h3>
+Por ahora los crearemos manualmente.</br>
+Los virtual host de Nginx estan definidos dentro de la carpeta "webenvdev/config/nginx".</br>
+El archivo deberá tener el nombre del dominio y la extension ".conf".</br>
+Un ejemplo de virtual host para Magento 2 es el archivo "mag2.conf"</br>
+Si lo copiamos con el nombre de nuestro proyecto (miproyecto.conf), lo editamos y modificamos las variables:</br>
+$MAGE_ROOT /var/www/html/<strong>miproyecto</strong>;</br>
+server_name <strong>miproyecto</strong>.dev;</br>
+y luego agregamos en nuestro archivo "hosts" (/etc/hosts) la linea: 127.0.0.1 <strong>miproyecto</strong>.dev</br>
+nuestro virtual host deberia estar completamente configurado.
+
+<h3>Document Root</h3>
+El lugar donde se encuentran los archivos de nuestro proyecto esta determinado por la variable "BASEWWW" que hemos configurado anteriormente.</br>
+Para el caso del ejemplo deberiamos crear una carpeta "miproyecto" dentro de la carpeta "www"</br>
+
+<h3>Bases de Datos</h3>
+Si bien podemos trabajar con la terminal o acceder con un administrador remoto, lo mas simple para proyectos simples muchas veces es usar PhpMyAdmin.</br>
+El virtual host ya está configurado por defecto, solo debemos mover la carpeta "webenvdev/www/html/phpmyadmin" a la carpeta definida en la variable "BASEWWW" y apuntar nuestro navegador a "http://phpmyadmin.dev"</br>
+El usuario es "root" y la clave, si no han modificado "MYSQLROOTPASSWORD", es "garbanzo".</br>
+NOTA: cuando tengamos que configurar una coneccion a una base de datos como "host" debemos usar "mysql" en lugar de "localhost".
+
+<h3>Acceso SSH</h3>
+Si necesitamos acceder al entorno por ssh por ejemplo para instalar Magento 2 con composer</br>
 ~/docker exec -it php7 bash</br>
 y para cerrar la terminal:</br>
 >exit
