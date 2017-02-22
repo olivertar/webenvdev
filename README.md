@@ -10,6 +10,30 @@ Es necesario tener instalado en tu sistema:
 - Docker Compose
 - Los puertos 80 y 3306 deben estar libres, esto significa que si la maquina anfitrion tiene un servidor web y mysql debemos detenerlos para usar el entorno de desarrollo virtualizado.
 
+<h3>Componentes</h3>
+- MySQL 5.7
+- Nginx
+- PHP 7.0
+- Librerias PHP
+<ul>
+<li>bc-math</li>
+<li>curl</li>
+<li>gd, ImageMagick</li>
+<li>intl</li>
+<li>mbstring</li>
+<li>mcrypt</li>
+<li>mhash</li>
+<li>openssl</li>
+<li>PDO/MySQL</li>
+<li>SimpleXML</li>
+<li>soap</li>
+<li>xml</li>
+<li>xsl</li>
+<li>zip</li>
+<li>json</li>
+<li>iconv</li>
+</ul>
+
 <h3>Instalacion</h3>
 Clonar el repositorio</br>
 ~/git clone git@github.com:olivertar/webenvdev.git
