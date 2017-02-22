@@ -1,0 +1,37 @@
+version: '2'
+services:
+  php7:
+    container_name: php7
+    build: ./php
+    volumes:
+      - /home/oliver/development/config/php:/usr/local/etc/php
+      - ../www/:/var/www
+    depends_on:
+      - mysql
+
+  nginx:
+    container_name: nginxs
+    image: nginx:1.10.1
+    build:
+        context: ../config/nginx
+        args:
+            - PHP_UPSTREAM=php-fpm
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /home/oliver/development/config/nginx:/etc/nginx/conf.d
+      - /home/oliver/development/logs/nginx/:/var/log/nginx
+      - /home/oliver/development/config/nginx/:/etc/nginx/sites-available
+      - /home/oliver/development/www/html:/var/www/html
+    depends_on:
+      - php7
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.14
+    volumes:
+      - /home/oliver/development/mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=docker_sample

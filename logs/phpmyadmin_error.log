@@ -1,0 +1,1 @@
+2017/02/21 16:20:00 [error] 7#7: *3 "/var/www/html/phpmyadmin/index.php" is not found (2: No such file or directory), client: 172.18.0.1, server: phpmyadmin.dev, request: "GET / HTTP/1.1", host: "phpmyadmin.dev"

@@ -1,0 +1,42 @@
+version: '2'
+services:
+  php7:
+    container_name: php7
+    build: ./php
+    volumes:
+      - ../config/php:/usr/local/etc/php
+      - ${BASEWWW}/:/var/www/html
+      - ../www/html/phpmyadmin:/var/www/html/phpmyadmin
+      - ../www/html/help:/var/www/html/help
+    depends_on:
+      - mysql
+
+  nginx:
+    container_name: nginxs
+    image: nginx:1.10.1
+    build:
+        context: ../config/nginx
+        args:
+            - PHP_UPSTREAM=php-fpm
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ../config/nginx:/etc/nginx/conf.d
+      - ../logs/nginx/:/var/log/nginx
+      - ../config/nginx/:/etc/nginx/sites-available
+      #- ../www/html:/var/www/html
+      - ${BASEWWW}:/var/www/html
+      - ../www/html/phpmyadmin:/var/www/html/phpmyadmin
+      - ../www/html/help:/var/www/html/help
+    depends_on:
+      - php7
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.14
+    volumes:
+      - ../mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQLROOTPASSWORD}
+      #- MYSQL_DATABASE=docker_sample
