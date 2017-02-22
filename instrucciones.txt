@@ -37,7 +37,7 @@ Para reinicialos podemos usar:
 o
 ~/docker-compose start
 
-si necesitamos acceder al entorno por ssh:
+Si necesitamos acceder al entorno por ssh:
 ~/docker exec -it php7 bash
 y para cerrar la terminal:
 exit
