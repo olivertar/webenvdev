@@ -1,6 +1,6 @@
 # webenvdev
 Entorno de desarrollo web basado en Docker y Docker Compose</br>
-Esta version es especica para desarrollar proyectos con Magento 2</br>
+Esta versión es especifica para desarrollar proyectos con <strong>Magento 2</strong></br>
 
 IMPORTANTE: <strong>esta versión aún esta bajo desarrollo.</strong>
 
