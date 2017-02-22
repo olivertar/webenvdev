@@ -1,0 +1,8 @@
+Eliminar todos los containers
+docker rm $(docker ps -aq)
+
+Eliminar todas las imagenes
+docker rmi $(docker images -q)
+
+ssh login
+docker exec -it php7 bash

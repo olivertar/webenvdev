@@ -1,0 +1,24 @@
+Clonar el repositorio
+~/git clone git@github.com:olivertar/webenvdev.git
+
+Ir a la carpeta "docker" dentro del directorio de instalacion
+~/cd webenvdev/docker
+
+Inicializar Docker
+~/docker-compose up
+
+Esta operacion solo se hace una vez y puede demorar un rato mas o menos largo mientras descarga e instala las imagenes de MySQL y PHP
+
+Para detener los contenedores el comando es:
+~/docker-compose stop
+
+Para reinicialos podemos usar:
+~/docker-compose start mysql php7 nginx
+o
+~/docker-compose start
+
+si necesitamos acceder al entorno por ssh:
+~/docker exec -it php7 bash
+y para cerrar la terminal:
+exit
+
